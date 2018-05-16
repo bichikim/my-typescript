@@ -1,0 +1,40 @@
+{
+  "compilerOptions": {
+    "module": "esnext",
+    "target": "es5",
+    "lib": [
+      "dom",
+      "es5",
+      "es6",
+      "es7",
+      "es2015",
+      "es2016",
+      "es2017",
+      "esnext"
+    ],
+    "noEmitHelpers": false,
+    "noImplicitAny": true,
+    "allowJs": true,
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["./src/*"],
+      "~/*": ["./lib/*"],
+      "@@/*": ["./*"],
+      "~~/*": ["./*"]
+    }
+  },
+  "include": [
+    "src/**/*.ts",
+    "types/**/*.d.ts"
+  ],
+  "exclude": [
+    "templates",
+    "node_modules"
+  ],
+  "compileOnSave": false
+}
