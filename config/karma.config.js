@@ -12,7 +12,6 @@ module.exports = function(config) {
     frameworks: ['mocha', 'chai'],
     reporters: ['spec', 'coverage', 'remap-coverage'],
     files: [
-      '../node_modules/babel-polyfill/dist/polyfill.js',
       {pattern: '../src/**/*.spec.js', watched: false},
       {pattern: './test/specs/**/*.spec.js', watched: false},
     ],
