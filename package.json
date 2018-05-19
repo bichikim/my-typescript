@@ -4,7 +4,7 @@
   "description": "A quick way to start typescriptp",
   "author": "bichi",
   "main": "dist/app.js",
-  "types": "src/index.ts",
+  "types": "types.ts",
   "license": "MIT",
   "scripts": {
     "build": "babel-node build",

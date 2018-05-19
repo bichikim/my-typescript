@@ -1,3 +1,5 @@
-export default (): number => {
-  return 1
+export default class MyTypescript {
+  constructor() {
+    return 'howdy'
+  }
 }

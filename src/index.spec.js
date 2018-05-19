@@ -1,6 +1,6 @@
 import app from './'
 describe('my-typescript', () => {
   it('This is test testing for nothing', () => {
-    expect(app()).to.equal(1)
+    expect(app()).to.equal('howdy')
   })
 })
