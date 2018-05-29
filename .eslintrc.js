@@ -46,7 +46,7 @@ module.exports = {
     'consistent-this': ['error', 'self'],
     'default-case': 'error',
     'func-name-matching': ['error', 'never'],
-    'func-style': ['error', 'expression', {'allowArrowFunctions': true }],
+    //'func-style': ['error', 'expression', {'allowArrowFunctions': true }],
     'getter-return': 'error',
     'global-require': 'error',
     'guard-for-in': 'error',
