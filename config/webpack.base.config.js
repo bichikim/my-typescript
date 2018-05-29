@@ -1,8 +1,8 @@
-const path = require('path')
+const {join} = require('path')
 const formatter = require('eslint-friendly-formatter')
 
 const resolve = function(dir) {
-  return path.join(__dirname, '..', dir)
+  return join(__dirname, '..', dir)
 }
 // noinspection JSUnusedGlobalSymbols
 module.exports = {
