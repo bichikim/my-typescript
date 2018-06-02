@@ -8,7 +8,7 @@
 const webpack = require('./webpack.test.config.js')
 module.exports = function(config) {
   config.set({
-    browsers: ['PhantomJS', 'ChromeWithoutSecurity'],
+    browsers: ['PhantomJS', 'ChromeWithoutSecurity', 'ChromeHeadlessWithoutSecurity'],
     frameworks: ['mocha', 'chai'],
     reporters: ['spec', 'coverage', 'remap-coverage'],
     files: [
@@ -43,6 +43,10 @@ module.exports = function(config) {
     customLaunchers: {
       ChromeWithoutSecurity: {
         base: 'Chrome',
+        flags: ['--disable-web-security'],
+      },
+      ChromeHeadlessWithoutSecurity: {
+        base: 'ChromeHeadless',
         flags: ['--disable-web-security'],
       },
     },
