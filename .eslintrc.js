@@ -13,6 +13,28 @@ module.exports = {
     parser: 'typescript-eslint-parser',
     sourceType: 'module',
   },
+  overrides: [
+    {
+      files: ['*.js'],
+      "rules": {
+        'indent': 'off',
+      }
+    },
+    {
+      files: ['*.ts'],
+      "rules": {
+        'new-cap': 'off',
+        'func-style': 'off',
+      }
+    },
+    {
+      files: ['*.spec.js'],
+      "rules": {
+        'max-nested-callbacks': 'off',
+        'no-magic-numbers': 'off',
+      }
+    }
+  ],
   //  at operator-linebreak
   rules: {
     /**************************************
@@ -46,19 +68,20 @@ module.exports = {
     'consistent-this': ['error', 'self'],
     'default-case': 'error',
     'func-name-matching': ['error', 'never'],
-    //'func-style': ['error', 'expression', {'allowArrowFunctions': true }],
+    'func-style': ['error', 'expression', {'allowArrowFunctions': true }],
     'getter-return': 'error',
     'global-require': 'error',
     'guard-for-in': 'error',
-    // 'indent': ['error', 2, {
-    //   'MemberExpression': 1,
-    //   'SwitchCase': 1,
-    //   'FunctionDeclaration': {
-    //     'body': 1,
-    //     'parameters': 2,
-    //   },
-    //   'ObjectExpression': 1,
-    // }], // owing to a typescript-eslint-parser error
+    'indent': ['error', 2, {
+      'MemberExpression': 1,
+      'SwitchCase': 1,
+      'FunctionDeclaration': {
+        'body': 1,
+        'parameters': 2,
+      },
+      'ObjectExpression': 1,
+    }],
+    // owing to a typescript-eslint-parser error
     'max-depth': ['error', {'max': 4}],
     'max-len': ['error', 100],
     'max-lines': ['error', 400],
@@ -150,7 +173,6 @@ module.exports = {
         'let': {before: true, after: true},
       },
     }],
-    // 'indent': ['error', 2],
     // 'consistent-return': 'error', // disable for now
     // 'no-shadow': ['error', {'builtinGlobals': false, 'hoist': 'all'}],
     // no-invalid-this: 'error',
@@ -161,7 +183,7 @@ module.exports = {
     // no-restricted-modules
     // no-restricted-properties: ... not now
     // no-sync
-    //'max-statements': 'error', // it has bug
+    'max-statements': ['error', 20], // it has bug
     // no-warning-comments ... maybe next time
     // 'linebreak-style': ['error', 'unix'],
     /*************************************
