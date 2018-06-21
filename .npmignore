@@ -4,3 +4,13 @@ build/
 config/
 docs/
 types/
+.idea/
+coverage/
+.eslintrc.js
+.babelrc
+.gitattributes
+.travis.yml
+tsconfig.json
+tslint.json
+yarn.lock
+yarn-error.log
