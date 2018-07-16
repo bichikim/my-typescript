@@ -8,7 +8,7 @@
 const webpack = require('./webpack.test.config.js')
 module.exports = function(config) {
   config.set({
-    browsers: ['PhantomJS', 'ChromeWithoutSecurity', 'ChromeHeadlessWithoutSecurity'],
+    browsers: ['ChromeWithoutSecurity', 'ChromeHeadlessWithoutSecurity'],
     frameworks: ['mocha', 'chai'],
     reporters: ['spec', 'coverage', 'remap-coverage'],
     files: [
@@ -23,16 +23,16 @@ module.exports = function(config) {
       '../src/**/*.js': ['webpack', 'sourcemap'],
       '../src/**/*.ts': ['webpack', 'sourcemap'],
       '../test/specs/**/*.js': ['webpack', 'sourcemap'],
-      './test/specs/**/*.ts': ['webpack', 'sourcemap'],
+      '../test/specs/**/*.ts': ['webpack', 'sourcemap'],
     },
     coverageReporter: {
-      type: 'in-memory'
+      type: 'in-memory',
     },
     remapCoverageReporter: {
       'text-summary': null,
       lcovonly: './coverage/lcov.info',
       html: './coverage/html',
-      cobertura: './coverage/cobertura.xml'
+      cobertura: './coverage/cobertura.xml',
     },
     webpack,
     webpackMiddleware: {

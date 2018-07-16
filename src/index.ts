@@ -1,5 +1,7 @@
 export default class MyTypescript {
-  constructor() {
-    return 'howdy'
+  private _message: string = 'howdy'
+
+  greeting() {
+    return this._message
   }
 }
