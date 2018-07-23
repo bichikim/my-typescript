@@ -1,24 +1,18 @@
 {
-  "compileOnSave": false,
   "compilerOptions": {
-    "target": "esnext",
-    "lib": ["dom", "esnext"],
     "module": "esnext",
-    "moduleResolution": "node",
-    "strict": true,
-    "noImplicitThis": false,
-    "strictPropertyInitialization": false,
-    "resolveJsonModule": true,
-    "alwaysStrict": true,
+    "target": "esnext",
+    "lib": [
+      "dom",
+      "esnext"
+    ],
     "noEmitHelpers": false,
     "noImplicitAny": true,
     "allowJs": true,
+    "moduleResolution": "node",
     "sourceMap": true,
     "emitDecoratorMetadata": true,
-    "strictNullChecks": true,
-    "removeComments": false,
     "experimentalDecorators": true,
-    "suppressImplicitAnyIndexErrors": true,
     "allowSyntheticDefaultImports": true,
     "baseUrl": "./",
     "paths": {
@@ -29,12 +23,13 @@
     }
   },
   "include": [
-    "**/*.ts",
+    "src/**/*.ts",
     "types/**/*.d.ts"
   ],
   "exclude": [
-    ".nuxt",
     ".keep",
-    "templates"
-  ]
+    ".templates",
+    "node_modules"
+  ],
+  "compileOnSave": false
 }

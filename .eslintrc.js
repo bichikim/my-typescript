@@ -1,7 +1,7 @@
 /* eslint-disable max-len,no-magic-numbers */
 module.exports = {
-  'plugins': ['html', 'vue', 'typescript'],
-  'env': {
+  plugins: ['html', 'vue', 'typescript'],
+  env: {
     'commonjs': true,
     'browser': true,
     'es6': true,
@@ -12,14 +12,25 @@ module.exports = {
   overrides: [
     {
       files: ['*.js'],
-      "rules": {
+      rules: {
         'indent': 'off',
       }
     },
     {
       files: ['*.ts'],
-      "rules": {
+      rules: {
         'new-cap': 'off',
+        'no-undef': 'off',
+        'no-undefined': 'off',
+        'no-unused-vars': 'off',
+      }
+    },
+    {
+      files: ['*.spec.js'],
+      rules: {
+        'no-magic-numbers': 'off',
+        'max-nested-callbacks': 'off',
+        'no-undef': 'off',
       }
     }
   ],
@@ -29,6 +40,10 @@ module.exports = {
     sourceType: 'module',
   },
   rules: {
+    /**************************************
+     * chai
+     **************************************/
+
     /**************************************
      * vue options
      **************************************/
@@ -41,7 +56,7 @@ module.exports = {
      **************************************/
     // off
     'one-var': 'off',
-    'no-undef': 'off',
+    'no-undef': 'error',
     'no-console': ['warn', {allow: ['warn', 'error']}],
     'linebreak-style': 'off',
     // on
@@ -65,7 +80,7 @@ module.exports = {
     'keyword-spacing': ['error', {'before': false, 'after': false, 'overrides': {'const' : {before: true, after: true}, 'let' : {before: true, after: true}, 'from': {before: true, after: true}, 'import': {before: true, after: true}, 'as': {before: true, after: true}, 'export': {after: true}, 'return': {before: true, after: true}, 'this': {before: true, after: true}, 'case':{after: true}, 'extends': {before: true}, 'implements': {before: true},},}],
     'max-depth': ['error', {'max': 4}],
     'max-len': ['error', 100],
-    'max-lines': 'error',
+    'max-lines': ['error', 1000],
     'max-nested-callbacks': ['error', {'max': 3}],
     'max-params': ['error', {'max': 6}],
     'max-statements-per-line': ['error', {'max': 2}],

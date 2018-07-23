@@ -1,2 +1,3 @@
-import MyTypescript from './src'
-export {MyTypescript}
+import main from './src'
+export * from './src'
+export default main

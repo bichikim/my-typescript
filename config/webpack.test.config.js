@@ -1,6 +1,8 @@
 const WebpackBaseConfig = require('./webpack.base.config')
 const webpackMerge = require('webpack-merge')
+const Webpack = require('webpack')
 //  karma test won't ues entry
+process.env.NODE_ENV = 'test'
 WebpackBaseConfig.entry = null
 module.exports = webpackMerge(WebpackBaseConfig, {
   /**
@@ -25,4 +27,9 @@ module.exports = webpackMerge(WebpackBaseConfig, {
       },
     ],
   },
+  plugins: [
+    new Webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify('test'),
+    }),
+  ],
 })

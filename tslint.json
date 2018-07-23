@@ -26,7 +26,7 @@
     "no-eval": true,
     "no-require-imports": true,
     "no-string-literal": true,
-    "trailing-comma": [true, {
+    "trailing-comma": [false, {
       "multiline": "always",
       "singleline": "never"
     }],
