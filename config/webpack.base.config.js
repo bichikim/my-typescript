@@ -1,8 +1,8 @@
-const {join} = require('path')
+const path = require('path')
 const formatter = require('eslint-friendly-formatter')
 
 const resolve = function(dir) {
-  return join(__dirname, '..', dir)
+  return path.join(__dirname, '..', dir)
 }
 // noinspection JSUnusedGlobalSymbols
 module.exports = {
@@ -34,18 +34,6 @@ module.exports = {
         options: {
           formatter,
         },
-      },
-      {
-        test: /\.ts$/,
-        exclude: /node_modules/,
-        use: [
-          {
-            loader: 'ts-loader',
-            options: {
-              appendTsSuffixTo: [/\.vue$/],
-            },
-          },
-        ],
       },
       {
         test: /\.js$/,
