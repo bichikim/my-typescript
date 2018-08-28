@@ -1,6 +1,6 @@
 /* eslint-disable max-len,no-magic-numbers */
 module.exports = {
-  plugins: ['html', 'vue', 'typescript'],
+  plugins: ['html', 'typescript'],
   env: {
     'commonjs': true,
     'browser': true,
@@ -34,7 +34,7 @@ module.exports = {
       }
     }
   ],
-  'extends': ['eslint:recommended', 'plugin:vue/recommended'],
+  'extends': ['eslint:recommended', 'plugin:vue-libs/recommended'],
   parserOptions: {
     parser: 'typescript-eslint-parser',
     sourceType: 'module',

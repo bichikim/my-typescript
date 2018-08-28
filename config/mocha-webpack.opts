@@ -1,0 +1,5 @@
+--colors
+--require build/test.js
+--webpack-config config/webpack.test.config.js
+src/**/*.spec.ts
+src/**/*.spec.js

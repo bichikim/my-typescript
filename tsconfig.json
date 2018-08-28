@@ -1,26 +1,35 @@
 {
+  "compileOnSave": false,
   "compilerOptions": {
-    "module": "esnext",
-    "target": "es5",
-    "lib": [
-      "dom",
-      "esnext"
-    ],
-    "noEmitHelpers": false,
-    "noImplicitAny": true,
-    "allowJs": true,
-    "moduleResolution": "node",
-    "sourceMap": true,
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
+    // 언어 환경
     "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "lib": ["dom", "esnext"],
     "baseUrl": "./",
     "paths": {
-      "@/*": ["./src/*"],
-      "~/*": ["./lib/*"],
-      "@@/*": ["./*"],
-      "~~/*": ["./*"]
-    }
+      "src/*" : ["src/*"],
+      "lib/*": ["lib/*"]
+    },
+    "allowJs": true,
+    // 빌드 환경
+    "module": "esnext",
+    "target": "esnext",
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "removeComments": false,
+    // 데코레이션
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+
+    //lint
+    "strict": true,
+    "noImplicitThis": true,
+    "strictPropertyInitialization": false,
+    "alwaysStrict": true,
+    "noEmitHelpers": false,
+    "strictNullChecks": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "noImplicitAny": false
   },
   "include": [
     "src/**/*.ts",
@@ -30,6 +39,5 @@
     ".keep",
     ".templates",
     "node_modules"
-  ],
-  "compileOnSave": false
+  ]
 }
