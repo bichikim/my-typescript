@@ -1,6 +1,7 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+
     // language environment
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
@@ -11,12 +12,14 @@
       "lib/*": ["lib/*"]
     },
     "allowJs": true,
+
     // build environment
     "module": "esnext",
     "target": "esnext",
     "moduleResolution": "node",
     "sourceMap": true,
     "removeComments": false,
+
     // decorator
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
