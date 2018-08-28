@@ -1,7 +1,7 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    // 언어 환경
+    // language environment
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "lib": ["dom", "esnext"],
@@ -11,13 +11,13 @@
       "lib/*": ["lib/*"]
     },
     "allowJs": true,
-    // 빌드 환경
+    // build environment
     "module": "esnext",
     "target": "esnext",
     "moduleResolution": "node",
     "sourceMap": true,
     "removeComments": false,
-    // 데코레이션
+    // decorator
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
 
