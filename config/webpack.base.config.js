@@ -60,6 +60,10 @@ module.exports = {
         loader: 'vue-loader',
       },
       {
+        test: /\.pug$/,
+        loader: 'pug-plain-loader',
+      },
+      {
         test: /\.css$/,
         use: [
           'vue-style-loader',

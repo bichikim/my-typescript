@@ -1,5 +1,5 @@
-<template>
-  
+<template lang="pug">
+  div test
 </template>
 
 <script>
