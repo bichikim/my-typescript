@@ -1,5 +1,6 @@
 const path = require('path')
 const formatter = require('eslint-friendly-formatter')
+const VueLoadrPlugin = require('vue-loader/lib/plugin')
 
 const resolve = function(dir) {
   return path.join(__dirname, '..', dir)
@@ -37,8 +38,11 @@ module.exports = {
       },
       {
         test: /\.js$/,
-        exclude: /node_modules/,
         use: 'babel-loader',
+        exclude: (file) => (
+          /node_modules/.test(file) &&
+          !/\.vue\.js/.test(file)
+        ),
       },
       {
         test: /\.ts$/, exclude: /node_modules/,
@@ -51,6 +55,24 @@ module.exports = {
           },
         ],
       },
+      {
+        test: /\.vue$/,
+        loader: 'vue-loader',
+      },
+      {
+        test: /\.css$/,
+        use: [
+          'vue-style-loader',
+          {
+            loader: 'css-loader',
+            options: {importLoaders: 1},
+          },
+          'stylus-loader',
+        ],
+      },
     ],
   },
+  plugins: [
+    new VueLoadrPlugin(),
+  ],
 }
