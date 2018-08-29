@@ -7,7 +7,7 @@
   "types": "types.d.ts",
   "license": "MIT",
   "scripts": {
-    "build": "babel-node build",
+    "build": "node build",
     "doc": "typedoc -out ./docs ./src --media ./media",
     "test": "run-s test:unit",
     "test:unit": "mocha-webpack --opts config/mocha-webpack.opts",
@@ -27,11 +27,15 @@
   "nyc": {
     "include": [
       "src/**/*.js",
-      "src/**/*.ts"
+      "src/**/*.ts",
+      "src/**/*.(ts|vue)",
+      "src/**/*.vue"
     ],
     "instrument": false,
     "sourceMap": false,
     "extension": [
+      "ts",
+      "vue",
       ".jsx",
       ".mjs"
     ],
@@ -42,6 +46,7 @@
   },
   "homepage": "https://github.com/bichikim/my-typescript#readme",
   "devDependencies": {
+    "@babel/cli": "^7.0.0",
     "@babel/core": "^7.0.0",
     "@babel/plugin-proposal-class-properties": "^7.0.0",
     "@babel/plugin-proposal-decorators": "^7.0.0",
@@ -59,13 +64,13 @@
     "@babel/plugin-proposal-throw-expressions": "^7.0.0",
     "@babel/plugin-syntax-dynamic-import": "^7.0.0",
     "@babel/plugin-syntax-import-meta": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
     "@types/chai": "^4.1.4",
     "@types/lodash": "4.14.116",
     "@types/mocha": "^5.2.4",
     "@types/sinon": "^5.0.1",
     "@vue/server-test-utils": "^1.0.0-beta.24",
     "@vue/test-utils": "^1.0.0-beta.24",
-    "babel-cli": "^6.26.0",
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^9.0.0",
     "babel-loader": "^8.0.0",
@@ -86,8 +91,9 @@
     "eslint-plugin-vue": "4.7.1",
     "eslint-plugin-vue-libs": "^3.0.0",
     "istanbul-instrumenter-loader": "^3.0.1",
+    "jsdom": "^12.0.0",
+    "jsdom-global": "^3.0.2",
     "mocha": "^5.2.0",
-    "mocha-jsdom": "^2.0.0",
     "mocha-webpack": "^2.0.0-beta.0",
     "npm-run-all": "^4.1.3",
     "nyc": "^13.0.1",

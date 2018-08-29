@@ -17,7 +17,7 @@
     "module": "esnext",
     "target": "esnext",
     "moduleResolution": "node",
-    "sourceMap": true,
+    "sourceMap": false,
     "removeComments": false,
 
     // decorator

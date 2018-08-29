@@ -1,11 +1,7 @@
 const WebpackBaseConfig = require('./webpack.base.config')
 const webpackMerge = require('webpack-merge')
 const Webpack = require('webpack')
-const {resolve} = require('path')
 const nodeExternals = require('webpack-node-externals')
-const root = (...path) => {
-  resolve(__dirname, '..', ...path)
-}
 //  karma test won't ues entry
 process.env.NODE_ENV = 'test'
 WebpackBaseConfig.entry = null
@@ -22,19 +18,19 @@ module.exports = webpackMerge(WebpackBaseConfig, {
    */
   mode: 'development',
   // for webpack karma debug
-  devtool: 'inline-source-map', // 'inline-cheap-module-source-map',
+  devtool: 'inline-cheap-module-source-map', // 'inline-source-map',
   module: {
     rules: [
-      {
-        test: /\.(js|ts)$/,
-        use: {
-          // for coverage
-          loader: 'istanbul-instrumenter-loader',
-          options: {esModules: true},
-        },
-        enforce: 'post',
-        exclude: /node_modules|\.spec\.(js|ts)$/,
-      },
+      // {
+      //   test: /\.(js|ts|vue)$/,
+      //   use: {
+      //     // for coverage
+      //     loader: 'istanbul-instrumenter-loader',
+      //     options: {esModules: true},
+      //   },
+      //   enforce: 'post',
+      //   exclude: /node_modules|\.spec\.(js|ts)$/,
+      // },
     ],
   },
   plugins: [
