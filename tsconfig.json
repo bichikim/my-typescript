@@ -5,7 +5,7 @@
     // language environment
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
-    "lib": ["dom", "esnext"],
+    "lib": ["es2015", "dom", "esnext"],
     "baseUrl": "./",
     "paths": {
       "src/*" : ["src/*"],

@@ -3,6 +3,9 @@ node_modules/
 bower_components/
 flow-typed/npm/
 
+## temporary
+.nyc_output/
+
 ## bundle folders
 public/
 #dist/

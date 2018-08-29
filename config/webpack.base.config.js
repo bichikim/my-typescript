@@ -5,9 +5,11 @@ const VueLoadrPlugin = require('vue-loader/lib/plugin')
 const resolve = function(dir) {
   return path.join(__dirname, '..', dir)
 }
+
+const exclude = /(node_modules|bowser_components)/
+
 // noinspection JSUnusedGlobalSymbols
 module.exports = {
-  target: 'node',
   entry: {
     app: ['./src/index.ts'],
   },
@@ -31,21 +33,21 @@ module.exports = {
         enforce: 'pre',
         test: /\.(js|ts|vue)/,
         loader: 'eslint-loader',
-        exclude: /node_modules/,
         options: {
           formatter,
         },
+        exclude,
       },
       {
         test: /\.js$/,
         use: 'babel-loader',
         exclude: (file) => (
-          /node_modules/.test(file) &&
+          exclude.test(file) &&
           !/\.vue\.js/.test(file)
         ),
       },
       {
-        test: /\.ts$/, exclude: /node_modules/,
+        test: /\.ts$/,
         use: [
           {
             loader: 'ts-loader',
@@ -54,14 +56,17 @@ module.exports = {
             },
           },
         ],
+        exclude,
       },
       {
         test: /\.vue$/,
         loader: 'vue-loader',
+        exclude,
       },
       {
         test: /\.pug$/,
         loader: 'pug-plain-loader',
+        exclude,
       },
       {
         test: /\.css$/,
@@ -73,6 +78,7 @@ module.exports = {
           },
           'stylus-loader',
         ],
+        exclude,
       },
     ],
   },
